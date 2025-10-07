@@ -1,15 +1,31 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+function handleCalendarClick() {
+  navigateTo('/calendar');
+}
+
+function handleListClick() {
+  navigateTo('/');
+}
+
+function handleMapClick() {
+  navigateTo('/map');
+}
+
+function handleMyMenuClick() {
+  navigateTo('/my-menu');
+}
+</script>
 
 <template>
   <footer>
     <!--  캘린더   -->
-    <button>CAL</button>
+    <button @click="handleCalendarClick">CAL</button>
     <!--  산 (목록)  -->
-    <button>LIST</button>
+    <button @click="handleListClick">LIST</button>
     <!--  산 (지도)  -->
-    <button>MAP</button>
+    <button @click="handleMapClick">MAP</button>
     <!--  my menu  -->
-    <button>MY</button>
+    <button @click="handleMyMenuClick">MY</button>
   </footer>
 </template>
 
