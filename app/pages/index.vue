@@ -1,8 +1,16 @@
 <script setup lang="ts">
-const mountains = ref([]);
-const { data } = await useFetch('/api/mountains');
-mountains.value = data.value?.[0]?.results || [];
-console.log('data: ', mountains.value);
+import type { Mountain } from '~/types/mountains';
+import Card from '~/components/Card.vue';
+
+const mountainInfo = ref<Mountain[]>([]); // 산 정보
+
+const { data, error } = await useFetch('/api/mountains');
+if (error.value) {
+  console.error('API fetch error:', error.value);
+} else {
+  // Cloudflare D1 응답 구조에 맞게 results 추출
+  mountainInfo.value = data.value?.[0]?.results || [];
+}
 
 definePageMeta({
   layout: 'common',
@@ -10,15 +18,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <h1>산 목록</h1>
-    <ul v-if="mountains.length">
-      <li v-for="m in mountains" :key="m.id">
-        {{ m.name }} ({{ m.regionSido }}, {{ m.regionSigungu }})
-      </li>
-    </ul>
-    <p v-else>데이터를 불러오는 중...</p>
-  </div>
+  <Card v-for="mountain in mountainInfo" :key="mountain.id" :mountain-info="mountain" />
 </template>
 
 <style scoped></style>

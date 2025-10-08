@@ -1,0 +1,130 @@
+.card-wrap {
+  padding: 0.7rem 1rem 1rem 1rem;
+  margin: 0.5rem 0.5rem 1rem 0.5rem;
+  border: 1px solid blue;
+  border-radius: 10px;
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .difficulty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      color: white;
+      font-weight: bold;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      span {
+        padding-left: 0.5rem;
+        color: #777;
+      }
+    }
+
+    .stamp {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: blue;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    gap: 0.6rem;
+    padding-top: 0.7rem;
+    font-size: 0.9rem;
+
+    .card-image {
+      width: 8rem;
+      height: 8rem;
+      border: 1px solid blue;
+      flex-shrink: 0;
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .location, .height, .comment {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .location {
+      margin-bottom: 1rem;
+    }
+
+    .comment {
+      line-height: 1.6;
+    }
+
+    .location::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+      background-image: url('~/assets/images/location.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .height::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 1rem;
+      height: 1rem;
+      background-image: url('~/assets/images/height.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .comment::before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 6px;
+      width: 1rem;
+      height: 1rem;
+      background-image: url('~/assets/images/comment.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .regist {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: auto;
+      button {
+        padding: 0.5rem 1rem;
+        background-color: white;
+        border: 1px solid blue;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
