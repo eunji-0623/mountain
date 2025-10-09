@@ -2,6 +2,7 @@
 
 <template>
   <div class="layout">
+    <CustomHeader />
     <main class="content">
       <slot />
     </main>
@@ -17,6 +18,7 @@
 }
 .content {
   flex: 1;
+  padding-top: 2.8rem;
   padding-bottom: 4rem;
 }
 </style>

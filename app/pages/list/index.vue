@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { useMountainStore } from '~/stores/mountain';
 
 const { getMountainInfo } = storeToRefs(useMountainStore());

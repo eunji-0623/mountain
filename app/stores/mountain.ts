@@ -8,6 +8,9 @@ export const useMountainStore = defineStore('mountain', {
   },
   getters: {
     getMountainInfo: (state): Mountain[] => state.mountainInfo,
+    completedCount: (state): number => {
+      return state.mountainInfo.filter((item) => item.completed !== 0).length;
+    },
   },
   actions: {
     setMountainInfo(data: Mountain[]) {
