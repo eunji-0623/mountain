@@ -1,31 +1,24 @@
 <script setup lang="ts">
 import type { Mountain } from '~/types/mountains';
-import Card from '~/components/Card.vue';
+import { useMountainStore } from '~/stores/mountain';
 
-const mountainInfo = ref<Mountain[]>([]); // 산 정보
+const { setMountainInfo } = useMountainStore();
 
 async function getMountainInfo() {
   const { data, error } = await useFetch('/api/mountains');
   if (error.value) {
     console.error('API fetch error:', error.value);
   } else {
-    mountainInfo.value = data.value?.[0]?.results || [];
+    setMountainInfo(data.value?.[0]?.results || []);
+    await navigateTo('/list');
   }
 }
 
 onMounted(async () => {
   await getMountainInfo();
 });
-
-definePageMeta({
-  layout: 'common',
-});
 </script>
 
-<template>
-  <div class="card-container">
-    <Card v-for="mountain in mountainInfo" :key="mountain.id" :mountain-info="mountain" />
-  </div>
-</template>
+<template></template>
 
 <style scoped></style>

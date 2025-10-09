@@ -3,4 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/reset.scss'],
   ssr: false,
+  modules: ['@pinia/nuxt'],
+  imports: {
+    dirs: ['./stores'],
+  },
+  pinia: {
+    autoImports: ['defineStore'],
+  },
 });

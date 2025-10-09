@@ -4,7 +4,7 @@ function handleCalendarClick() {
 }
 
 function handleListClick() {
-  navigateTo('/');
+  navigateTo('/list');
 }
 
 function handleMapClick() {
