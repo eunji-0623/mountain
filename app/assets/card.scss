@@ -1,3 +1,24 @@
+.filter-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0.5rem 0 0.5rem;
+
+  .filter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 14px;
+
+    select {
+      padding: 0.2rem;
+      border: 1px solid blue;
+      border-radius: 0.5rem;
+    }
+  }
+}
+
 .card-container {
   overflow-y: auto;
 }
