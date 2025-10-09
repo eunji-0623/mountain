@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Mountain } from '~/types/mountains';
 import { useMountainStore } from '~/stores/mountain';
 
 const { setMountainInfo } = useMountainStore();
