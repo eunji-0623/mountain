@@ -7,4 +7,14 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./stores'],
   },
+  app: {
+    head: {
+      link: [
+        {
+          href: 'https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css',
+          rel: 'stylesheet',
+        },
+      ],
+    },
+  },
 });

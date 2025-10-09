@@ -7,19 +7,27 @@ defineProps({
 <template>
   <div class="card-wrap">
     <div class="card-header">
-      <div class="flex items-center gap-half">
-        <div class="difficulty blue">{{ mountainInfo?.difficulty }}</div>
+      <div class="flex items-center gap-half-4">
+        <div :class="`difficulty diff${mountainInfo?.difficulty}`">
+          {{ mountainInfo?.difficulty }}
+        </div>
         <h1>
           {{ mountainInfo?.name
           }}<span v-if="mountainInfo?.completed">({{ mountainInfo?.completedAt }})</span>
         </h1>
       </div>
-      <div v-if="mountainInfo?.completed">
+      <div class="stamp-wrap" v-if="mountainInfo?.completed">
         <div class="stamp"></div>
       </div>
     </div>
     <div class="card-content">
-      <div class="card-image">이미지</div>
+      <div class="card-image">
+        <img
+          v-if="!mountainInfo?.imageUrl"
+          src="~/assets/images/defaultImage.png"
+          alt="산 이미지 없음"
+        />
+      </div>
       <div class="description">
         <div class="location">
           {{ mountainInfo?.regionSido }} {{ mountainInfo?.regionSigungu }}

@@ -16,9 +16,8 @@ definePageMeta({
 <template>
   <div class="filter-wrap">
     <div class="filter">
-      <p>완료여부</p>
       <select v-model="complete">
-        <option value="all">전체</option>
+        <option value="all">완료여부</option>
         <option value="completed">완료</option>
         <option value="notCompleted">미완료</option>
       </select>

@@ -1,0 +1,12 @@
+@import "common";
+
+@mixin button {
+  font-weight: 600;
+  color: $primary-brown;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-family: 'NanumSquareRound', sans-serif;
+  height: 40px;
+  line-height: 22px;
+  border: 2px solid $primary-brown;
+}

@@ -9,7 +9,7 @@ const { completedCount } = storeToRefs(useMountainStore());
   <header>
     <h1>
       지금까지 <span>{{ completedCount || 0 }}</span
-      >곳 정복 완료
+      >군데 정복 완료
     </h1>
   </header>
 </template>

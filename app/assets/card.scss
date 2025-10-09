@@ -1,8 +1,13 @@
+@import "mixins";
+@import "common";
+
 .filter-wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem 0.5rem 0 0.5rem;
+  height: 34px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  background-color: $bg-color;
 
   .filter {
     display: flex;
@@ -10,29 +15,35 @@
     align-items: center;
     gap: 0.3rem;
     font-size: 14px;
+    color: $primary-brown;
+    font-weight: 600;
 
     select {
       padding: 0.2rem;
-      border: 1px solid blue;
+      border: 2px solid $primary-brown;
       border-radius: 0.5rem;
+      color: $primary-brown;
+      font-weight: 600;
     }
   }
 }
 
 .card-container {
   overflow-y: auto;
+  background-color: $bg-color;
 }
 
 .card-wrap {
   padding: 0.7rem 1rem 1rem 1rem;
   margin: 0.5rem 0.5rem 1rem 0.5rem;
-  border: 1px solid blue;
   border-radius: 10px;
+  background-color: $bg-color-light;
 
   .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: $primary-brown;
 
     .difficulty {
       display: flex;
@@ -45,27 +56,48 @@
       font-weight: bold;
     }
 
-    .blue {
-      background-color: blue;
+    .diff1 {
+      background-color: $orange;
+    }
+    .diff2 {
+      background-color: $green;
+    }
+    .diff3 {
+      background-color: $blue;
+    }
+    .diff4 {
+      background-color: $purple;
+    }
+    .diff5 {
+      background-color: $pink;
     }
 
     h1 {
+      font-family: 'NanumSquareRoundExtraBold', sans-serif;
       font-size: 1.1rem;
-      font-weight: 500;
+      font-weight: 900;
       span {
+        font-family: 'NanumSquareRoundExtraBold', sans-serif;
         padding-left: 0.5rem;
-        color: #777;
+        color: $light-brown;
+        font-size: 0.8rem;
+        font-weight: 900;
       }
     }
 
+    .stamp-wrap {
+      position: relative;
+    }
+
     .stamp {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-      background-color: blue;
+      position: absolute;
+      right: -0.5rem;
+      top: -1rem;
+      width: 5rem;
+      height: 5rem;
+      background-image: url('~/assets/images/stamp1.png');
+      opacity: 0.5;
+      background-size: contain;
     }
   }
 
@@ -73,13 +105,22 @@
     display: flex;
     gap: 0.6rem;
     padding-top: 0.7rem;
+    color: $primary-brown;
     font-size: 0.9rem;
 
     .card-image {
       width: 8rem;
       height: 8rem;
-      border: 1px solid blue;
+      border: 3px solid $primary-brown;
+      border-radius: 0.5rem;
       flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.3rem;
+      }
     }
 
     .description {
@@ -92,14 +133,22 @@
       position: relative;
       padding-left: 1.3rem;
       margin-bottom: 0.8rem;
+      height: 1rem;
+      font-weight: 600;
     }
 
     .location {
+      margin-top: 0.2rem;
       margin-bottom: 1rem;
     }
 
     .comment {
       line-height: 1.6;
+    }
+
+    .location, .height {
+      display: flex;
+      align-items: flex-end;
     }
 
     .location::before {
@@ -108,7 +157,7 @@
       left: 0;
       width: 1rem;
       height: 1rem;
-      background-image: url('~/assets/images/location.svg');
+      background-image: url('~/assets/images/location.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -120,7 +169,7 @@
       left: 0;
       width: 1rem;
       height: 1rem;
-      background-image: url('~/assets/images/height.svg');
+      background-image: url('~/assets/images/height.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -130,10 +179,10 @@
       content: '';
       position: absolute;
       left: 1px;
-      top: 6px;
+      top: 4px;
       width: 1rem;
       height: 1rem;
-      background-image: url('~/assets/images/comment.svg');
+      background-image: url('~/assets/images/comment.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -145,10 +194,8 @@
       align-items: center;
       margin-top: auto;
       button {
-        padding: 0.5rem 1rem;
-        background-color: white;
-        border: 1px solid blue;
-        border-radius: 0.5rem;
+        @include button;
+        background-color: $point-color;
       }
     }
   }
