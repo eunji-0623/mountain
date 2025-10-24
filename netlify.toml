@@ -1,0 +1,17 @@
+[build]
+# Nuxt 3 빌드 명령어
+command = "npm run build"
+
+# Netlify가 배포할 폴더 (Nuxt 3은 .output/public에 정적 파일이 생성됨)
+publish = ".output/public"
+
+[build.environment]
+# Node 버전 지정 (oxc-parser 오류 방지)
+NODE_VERSION = "20"
+
+# npm peer dependency 충돌 방지 옵션
+NPM_FLAGS = "--legacy-peer-deps"
+
+[functions]
+# 서버 함수(API 라우트)가 위치할 경로
+directory = ".netlify/functions"
