@@ -11,7 +11,7 @@ header {
   color: $light-brown;
   font-weight: 600;
   background-color: $bg-color;
-  border-bottom: 3px solid $primary-brown;
+  border-bottom: 3px solid $light-brown;
   z-index: 10;
   span {
     font-family: 'NanumSquareRoundExtraBold', sans-serif;
@@ -29,13 +29,17 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-top: 3px solid $primary-brown;
+  border-top: 3px solid $light-brown;
   z-index: 10;
   button {
     width: 25%;
-    height: 3rem;
+    height: 2.8rem;
     background-color: $bg-color;
     border: none;
     cursor: pointer;
+    img {
+      width: 35px;
+      height: 35px;
+    }
   }
 }
