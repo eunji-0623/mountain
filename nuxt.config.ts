@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/reset.scss'],
   ssr: false,
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt', '@netlify/nuxt', '@netlify/nuxt'],
   imports: {
     dirs: ['./stores'],
   },
