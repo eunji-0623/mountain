@@ -17,14 +17,16 @@ defineProps({
         </h1>
       </div>
       <div class="stamp-wrap" v-if="mountainInfo?.completed">
-        <div class="stamp"></div>
+        <div v-if="mountainInfo?.completed === 1" class="stamp stamp1" />
+        <div v-if="mountainInfo?.completed === 2" class="stamp stamp2" />
+        <div v-if="mountainInfo?.completed === 3" class="stamp stamp3" />
       </div>
     </div>
     <div class="card-content">
       <div class="card-image">
         <img
           v-if="!mountainInfo?.imageUrl"
-          src="~/assets/images/defaultImage.png"
+          src="~/assets/images/defaultImage.jpg"
           alt="산 이미지 없음"
         />
       </div>

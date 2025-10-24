@@ -95,9 +95,18 @@
       top: -1rem;
       width: 5rem;
       height: 5rem;
-      background-image: url('~/assets/images/stamp1.png');
       opacity: 0.5;
       background-size: contain;
+    }
+
+    .stamp1 {
+      background-image: url('~/assets/images/stamp1.png');
+    }
+    .stamp2 {
+      background-image: url('~/assets/images/stamp2.png');
+    }
+    .stamp3 {
+      background-image: url('~/assets/images/stamp3.png');
     }
   }
 
