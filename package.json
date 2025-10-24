@@ -3,11 +3,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "preinstall": "npm rebuild oxc-parser --build-from-source || true",
+    "postinstall": "nuxt prepare",
+    "build": "nuxt build"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.11.2",
