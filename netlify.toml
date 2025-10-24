@@ -1,17 +1,13 @@
 [build]
-# Nuxt 3 빌드 명령어
-command = "npm run build"
-
-# Netlify가 배포할 폴더 (Nuxt 3은 .output/public에 정적 파일이 생성됨)
-publish = ".output/public"
+  # 빌드 커맨드: 의존성 설치 후 Nuxt 빌드
+  command = "npm install --legacy-peer-deps && npm run build"
+  # 배포할 폴더
+  publish = ".output/public"
+  # Netlify Functions 경로
+  functions = ".netlify/functions"
 
 [build.environment]
-# Node 버전 지정 (oxc-parser 오류 방지)
-NODE_VERSION = "20"
-
-# npm peer dependency 충돌 방지 옵션
-NPM_FLAGS = "--legacy-peer-deps"
-
-[functions]
-# 서버 함수(API 라우트)가 위치할 경로
-directory = ".netlify/functions"
+  # Node 버전 고정 (Netlify Linux 환경)
+  NODE_VERSION = "20"
+  # npm 설치 시 legacy peer deps 옵션 적용
+  NPM_FLAGS = "--legacy-peer-deps"
