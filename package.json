@@ -6,7 +6,6 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "preinstall": "npm rebuild oxc-parser --build-from-source || true",
     "postinstall": "nuxt prepare",
     "build": "nuxt build"
   },
