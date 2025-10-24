@@ -1,4 +1,4 @@
-@import "common";
+@use "../assets/common" as *;
 
 header {
   font-family: 'NanumSquareRoundExtraBold', sans-serif;
@@ -36,5 +36,6 @@ footer {
     height: 3rem;
     background-color: $bg-color;
     border: none;
+    cursor: pointer;
   }
 }

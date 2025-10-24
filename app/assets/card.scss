@@ -1,5 +1,5 @@
-@import "mixins";
-@import "common";
+@use "../assets/mixins" as mixins;
+@use "../assets/common" as common;
 
 .filter-wrap {
   display: flex;
@@ -7,7 +7,7 @@
   align-items: center;
   height: 34px;
   padding: 0.5rem 0.5rem 0 0.5rem;
-  background-color: $bg-color;
+  background-color: common.$bg-color;
 
   .filter {
     display: flex;
@@ -15,14 +15,14 @@
     align-items: center;
     gap: 0.3rem;
     font-size: 14px;
-    color: $primary-brown;
+    color: common.$primary-brown;
     font-weight: 600;
 
     select {
       padding: 0.2rem;
-      border: 2px solid $primary-brown;
+      border: 2px solid common.$primary-brown;
       border-radius: 0.5rem;
-      color: $primary-brown;
+      color: common.$primary-brown;
       font-weight: 600;
     }
   }
@@ -30,20 +30,20 @@
 
 .card-container {
   overflow-y: auto;
-  background-color: $bg-color;
+  background-color: common.$bg-color;
 }
 
 .card-wrap {
   padding: 0.7rem 1rem 1rem 1rem;
   margin: 0.5rem 0.5rem 1rem 0.5rem;
   border-radius: 10px;
-  background-color: $bg-color-light;
+  background-color: common.$bg-color-light;
 
   .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $primary-brown;
+    color: common.$primary-brown;
 
     .difficulty {
       display: flex;
@@ -57,19 +57,19 @@
     }
 
     .diff1 {
-      background-color: $orange;
+      background-color: common.$orange;
     }
     .diff2 {
-      background-color: $green;
+      background-color: common.$green;
     }
     .diff3 {
-      background-color: $blue;
+      background-color: common.$blue;
     }
     .diff4 {
-      background-color: $purple;
+      background-color: common.$purple;
     }
     .diff5 {
-      background-color: $pink;
+      background-color: common.$pink;
     }
 
     h1 {
@@ -79,7 +79,7 @@
       span {
         font-family: 'NanumSquareRoundExtraBold', sans-serif;
         padding-left: 0.5rem;
-        color: $light-brown;
+        color: common.$light-brown;
         font-size: 0.8rem;
         font-weight: 900;
       }
@@ -114,13 +114,13 @@
     display: flex;
     gap: 0.6rem;
     padding-top: 0.7rem;
-    color: $primary-brown;
+    color: common.$primary-brown;
     font-size: 0.9rem;
 
     .card-image {
       width: 8rem;
       height: 8rem;
-      border: 3px solid $primary-brown;
+      border: 3px solid common.$primary-brown;
       border-radius: 0.5rem;
       flex-shrink: 0;
 
@@ -203,8 +203,8 @@
       align-items: center;
       margin-top: auto;
       button {
-        @include button;
-        background-color: $point-color;
+        @include mixins.button;
+        background-color: common.$point-color;
       }
     }
   }
